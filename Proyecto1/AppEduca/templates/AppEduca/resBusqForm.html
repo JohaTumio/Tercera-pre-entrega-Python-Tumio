@@ -1,0 +1,46 @@
+{% extends 'AppEduca/base.html' %}
+{% load static %}
+
+{% block main %}
+{% if cursos %}
+    <h2 class="text-center my-4">Resultados de la búsqueda de cursos:</h2>
+    <div class="row">
+        {% for curso in cursos %}
+            <div class="col-md-3 d-flex justify-content-center">
+                <div class="card m-2" style="width: 15rem;">
+                    <h5 class="card-header text-center">{{ curso.nombre }}</h5>
+                    <div class="card-body">
+                        <p class="card-text text-center">Comisión: {{ curso.comision }}</p>
+                        <div class="card-footer text-center">
+                            Datos del curso
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+    
+{% if estudiantes %}
+    <h2 class="text-center my-4">Resultados de la búsqueda de estudiantes:</h2>
+    <div class="row mb-3">
+        {% for estudiante in estudiantes %}
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card m-2" style="width: 15rem;">
+                    <h5 class="card-header text-center">Estudiante n°: {{ estudiante.id }}</h5>
+                    <div class="card-body">
+                        <p class="card-text text-center">Nombre: {{ estudiante.nombre }}</p>
+                        <p class="card-text text-center">Apellido: {{ estudiante.apellido }}</p>
+                        <p class="card-text text-center">Edad: {{ estudiante.edad }}</p>
+                        <p class="card-text text-center">Email: {{ estudiante.email }}</p>
+                        <div class="card-footer text-center">
+                            Datos del estudiante
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock main %}
+

@@ -1,0 +1,27 @@
+{% extends "AppEduca/base.html" %}
+{% load static %}
+{% block title %} Estudiantes {% endblock title %}
+{% block titulo%} Estudiantes {% endblock titulo %}
+{% block textForm %} <h3 class="ms-4">Agregar Estudiante:</h3> {% endblock textForm %}
+
+{% block main %}
+    <section id="Estudiantes">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEduca/assets/img/estudiantes.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Estudiantes</h2>
+                        <p>Queremos que formes parte de nuestro gran equipo de estudiantes!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
+
+{% block formulario %}
+{% include "AppEduca/formulario.html" %}
+{% endblock formulario %}

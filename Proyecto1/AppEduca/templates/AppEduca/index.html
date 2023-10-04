@@ -1,0 +1,107 @@
+{% extends "AppEduca/base.html" %}
+{% load static %} 
+{% block title %} Incio {% endblock title %}
+{%block titulo%} Web AppEduca {% endblock titulo %}
+
+{% block btn %}
+<a class="btn btn-primary btn-lg rounded-pill mt-5 me-3" href="#Estudiantes">Estudiantes</a>
+<a class="btn btn-primary btn-lg rounded-pill mt-5 me-3" href="#Profesores">Profesores</a>
+<a class="btn btn-primary btn-lg rounded-pill mt-5" href="#Cursos">Cursos</a>
+{% endblock btn%}
+
+{% block main %}
+    <!-- Content section 1-->
+    <section id="Estudiantes">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEduca/assets/img/estudiantes.jpg' %}" alt="grupo de estudiantes" /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Estudiantes</h2>
+                        <p>Queremos que formes parte de nuestro gran equipo de estudiantes!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content section 2-->
+    <section id="Profesores">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEduca/assets/img/profesores.jpg' %}" alt="grupo de estudiantes junto a su profesor" /></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4">Profesores</h2>
+                        <p>¡¡¡Contamos con los mejores profesores!!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content section 3-->
+    <section id="Cursos">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEduca/assets/img/cursos.png' %}" alt="logos de cursos" /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Cursos</h2>
+                        <p>Ofrecemos gran variedad de cursos para que elijas el que mas se ajuste a tus necesidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content section 4 -->
+    <section>
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEduca/assets/img/proyectos.jpg' %}" alt="proyectos" /></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4">Entrega De Proyectos</h2>
+                        <p>Estamos comprometidos con tu éxito académico y creemos firmemente en la importancia de la entrega oportuna de proyectos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
+
+{% block formulario %}
+    <div class="container m-3">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Formulario de búsqueda de cursos -->
+                <h2>Buscar Cursos</h2>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{ cursoForm.as_table }} 
+                    </table>
+                    <input type="submit" value="Buscar" class="btn btn-primary mt-2">
+                </form>
+            </div>
+            <div class="col-md-6">
+                <!-- Formulario de búsqueda de estudiantes -->
+                <h2>Buscar Estudiantes</h2>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{ estudianteForm.as_table }} 
+                    </table>
+                    <input type="submit" value="Buscar" class="btn btn-primary mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends "AppEduca/base.html" %}
+{% load static %}
+{% block title %} Entrega De Proyectos {% endblock title %} 
+{% block titulo %} Entrega De Proyectos {% endblock titulo %}
+{% block textForm %} <h3 class="ms-4">Entrega tu Proyecto:</h3> {% endblock textForm %}
+
+{% block main %}
+    <section>
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'AppEduca/assets/img/proyectos.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4">Entrega De Proyectos</h2>
+                        <p>Estamos comprometidos con tu éxito académico y creemos firmemente en la importancia de la entrega oportuna de proyectos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
+
+{% block formulario %}
+{% include "AppEduca/formulario.html" %}
+{% endblock formulario %}

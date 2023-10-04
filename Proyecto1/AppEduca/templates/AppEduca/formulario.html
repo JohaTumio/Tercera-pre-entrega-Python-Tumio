@@ -1,0 +1,9 @@
+<div class="m-4">
+    <form action="" method="POST" class="my-form">
+        {% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }} 
+        </table>
+        <input type="submit" value="Enviar" class="btn btn-primary mt-2">
+    </form>
+</div>
