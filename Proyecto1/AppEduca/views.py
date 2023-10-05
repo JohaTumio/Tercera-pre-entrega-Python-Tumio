@@ -2,25 +2,9 @@ from django.shortcuts import render, redirect
 from AppEduca.forms import CursoFormulario, EstudianteFormulario, ProfesorFormulario, EntregaFormulario, BuscaCursoForm, BuscaEstudianteForm
 from AppEduca.models import Curso, Estudiante, Profesor, Entrega_de_proyecto
 
-""" def inicio(request):
-    return render(request, "AppEduca/index.html") """
-
-""" def inicio(request):
-    if request.method == "POST":
-        miFormulario = BuscaCursoForm(request.POST)
-        if miFormulario.is_valid():
-            informacion = miFormulario.cleaned_data
-            cursos = Curso.objects.filter(nombre__icontains=informacion["curso"])
-            return render(request, "AppEduca/resBusqForm.html", {"cursos": cursos})
-    else:
-        miFormulario = BuscaCursoForm()
-    return render(request, "AppEduca/index.html", {"miFormulario": miFormulario}) """
-
-
-
 def inicio(request):
-    cursos = []  # Inicializamos cursos como una lista vacía
-    estudiantes = []  # Inicializamos estudiantes como una lista vacía
+    cursos = []
+    estudiantes = []
 
     if request.method == "POST":
         # Formulario de búsqueda de cursos
